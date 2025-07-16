@@ -2,6 +2,7 @@
 // استخراج معرف المنتج من معلمات الرابط
     const urlParams = new URLSearchParams(window.location.search);
     const productId =urlParams.get('id');
+    document.title = "product" + productId ;
     
     // جلب بيانات المنتج من ملف JSON
     fetch('./accest/json/products.json')
@@ -9,7 +10,6 @@
       .then(data => {
         // إيجاد المنتج ذو الـ id المطلوب
         const product = data.find(p => p.id === productId);
-        document.title = ${product.name};
         const container = document.getElementById("product-details");
         if (product) {
           container.innerHTML = `
