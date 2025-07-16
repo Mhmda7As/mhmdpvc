@@ -6,7 +6,7 @@ function navbarc(p1,p2,p3,p4){
       </h1>
       <ul class="hidden md:flex gap-8 xl:gap-16">
         <a href="./" class=" `+ p1 +`text-yellow-800"><li>Home</li></a>
-        <a href="./Prodacts.html" class=" `+ p2 +`text-yellow-800"><li>Prodacts</li></a>
+        <a href="./prodacts.html" class=" `+ p2 +`text-yellow-800"><li>Prodacts</li></a>
         <a href="./Contact.html" class=" `+ p3 +`text-yellow-800"><li>Contact</li></a>
         <a href="./About.html" class=" `+ p4 +`text-yellow-800"><li>About</li></a>
       </ul>
@@ -19,7 +19,7 @@ function navbarc(p1,p2,p3,p4){
     <div id="towNav" class="md:hidden hidden absolute bg-white h-full w-full z-50">
       <ul class="flex flex-col ">
           <a href="./" class=" `+ p1 +`text-yellow-800 border-t p-8"><li >Home</li></a>
-          <a href="./Prodacts.html" class=" `+ p2 +`text-yellow-800 border-t p-8"><li ">Prodacts</li></a>
+          <a href="./prodacts.html" class=" `+ p2 +`text-yellow-800 border-t p-8"><li ">Prodacts</li></a>
           <a href="./Contact.html" class=" `+ p3 +`text-yellow-800 border-t p-8"><li>Contact</li></a>
           <a href="./About.html" class=" `+ p4 +`text-yellow-800 border-y p-8"><li>About</li></a>
       </ul>
