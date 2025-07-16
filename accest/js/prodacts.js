@@ -9,7 +9,7 @@ let allProducts = [];
     prodactsList.innerHTML = "";
     list.forEach(product => {
       const card = document.createElement("a");
-      card.href = `Product.html?id=${product.id}`;
+      card.href = `product.html?id=${product.id}`;
       card.className = "group block cursor-pointer";
       card.innerHTML = `
         <div>
