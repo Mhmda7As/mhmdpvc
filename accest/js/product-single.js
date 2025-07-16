@@ -18,8 +18,8 @@
     <div class="container mx-auto p-8 flex justify-between">
       <div class="flex justify-start gap-3">
         <div><a class="hover:text-yellow-700" href="./Prodacts.html">Prodacts /</a></div>
-        <div><a class="hover:text-yellow-700" href="./product.html?id=p4">${product.type} /</a></div>
-        <div><a class="hover:text-yellow-700" href="./product.html?id=p4">${product.name}</a></div>
+        <div><a class="hover:text-yellow-700" href="./product.html?id=${product.id}">${product.type} /</a></div>
+        <div><a class="hover:text-yellow-700" href="./product.html?id=${product.id}">${product.name}</a></div>
       </div>
       <div>
 
