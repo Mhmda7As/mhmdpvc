@@ -11,7 +11,7 @@
         const product = data.find(p => p.id === productId);
         const container = document.getElementById("product-details");
         if (product) {
-            document.title = ${product.name};
+             document.title = `${product.name}`;
           container.innerHTML = `
             <section>
   <nav class="w-full border-y ">
