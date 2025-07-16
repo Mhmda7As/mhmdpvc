@@ -2,14 +2,14 @@
 // استخراج معرف المنتج من معلمات الرابط
     const urlParams = new URLSearchParams(window.location.search);
     const productId =urlParams.get('id');
-    console.log(productId)
-
+    
     // جلب بيانات المنتج من ملف JSON
     fetch('./accest/json/products.json')
       .then(response => response.json())
       .then(data => {
         // إيجاد المنتج ذو الـ id المطلوب
         const product = data.find(p => p.id === productId);
+        document.title = ${product.name};
         const container = document.getElementById("product-details");
         if (product) {
           container.innerHTML = `
@@ -44,7 +44,7 @@
           <div class="flex flex-col gap-3">
             <h1>contact opchins :</h1>
             <div class="flex gap-3">
-            <a href="https://www.messenger.com/t/100007636482286/?text=Hello%2C+is+this+product+%28${product.name}%29+available+in+stock%3F" class="border rounded-md p-2 text-center bg-blue-300 w-1/3 text-white">massenge</a>
+            <a href="https://www.messenger.com/t/100007636482286/?text=Hello%2C+is+this+product+%28${product.name}%29+available+in+stock%3F" class="border rounded-md p-2  hover:bg-blue-700 text-center bg-blue-300 w-1/3 text-white">massenge</a>
             </div>
           </div>
         </div>
