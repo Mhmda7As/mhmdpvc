@@ -2,7 +2,7 @@ function navbarc(p1,p2,p3,p4){
     document.getElementById("navbarcid").innerHTML = `<nav>
     <div class="container mx-auto flex justify-between items-center p-8">
       <h1 class="text-lg hover:text-yellow-800 font-semibold">
-        <a href="./">mohammad black</a>
+        <a href="./"> Alma Remodeling LLc</a>
       </h1>
       <ul class="hidden md:flex gap-8 xl:gap-16">
         <a href="./" class=" `+ p1 +`text-yellow-800"><li>Home</li></a>
