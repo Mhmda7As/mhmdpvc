@@ -29,7 +29,7 @@ function navbarc(p1,p2,p3,p4){
   <div class="border-t mt-8 px-8">
     <footer class="container mx-auto py-8 md:px-0 ">
         <div class="flex justify-between items-center ">
-        <h1 class="">power @ mohammad pvc</h1>
+        <h1 class="">Alma Remodeling LLc</h1>
         <ul class="flex md:gap-5 gap-4">
             <li>
             <a  href="https://www.instagram.com/">
