@@ -40,3 +40,29 @@
   opacity: 1;
   visibility: visible;
 }
+
+@media (max-width: 767px) {
+ul ul li{
+ padding: 30px;
+
+  border-top: solid 1px black;
+
+}
+ul ul li:hover{
+  color: #5e431a;
+  border-top: solid 1px #5e431a;
+}}
+@media (min-width: 767px) {
+ul ul{
+  margin-top: 29px;
+  width: 20vw;
+}
+ul ul li{
+padding: 10px;
+ background-color: #fff;
+  border-top: solid 1px black;
+
+}
+ul ul li:hover{
+  color: #5e431a;
+  border-top: solid 1px #5e431a;}}
