@@ -13,7 +13,7 @@ let allProducts = [];
       card.className = "group block cursor-pointer";
       card.innerHTML = `
         <div>
-          <img src="${product.image}" alt="${product.name}" class="aspect-square w-full rounded-lg bg-gray-200 object-cover group-hover:opacity-75" />
+          <img src="${product.images[0]}" alt="${product.name}" class="aspect-square w-full rounded-lg bg-gray-200 object-cover group-hover:opacity-75" />
           <div class="flex justify-between">
             <h3 class="mt-4 text-sm text-gray-700">
               <span class="text-lg">${product.name}</span> | ${product.type}
@@ -32,8 +32,7 @@ let allProducts = [];
   function filterAndSearch() {
     let value = searchInput.value.toLowerCase();
     let result = allProducts.filter(p =>
-      p.name.toLowerCase().includes(value) ||
-      p.color.toLowerCase().includes(value)
+      p.name.toLowerCase().includes(value)
     );
 
     let sort = filterSelect.value;
