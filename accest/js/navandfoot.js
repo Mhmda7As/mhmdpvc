@@ -2,26 +2,47 @@ function navbarc(p1,p2,p3,p4){
     document.getElementById("navbarcid").innerHTML = `<nav>
     <div class="container mx-auto flex justify-between items-center p-8">
       <h1 class="text-lg hover:text-yellow-800 font-semibold">
-        <a href="./"> Alma Remodeling LLc</a>
+        <a href="./">Alma Remodeling</a>
       </h1>
       <ul class="hidden md:flex gap-8 xl:gap-16">
         <a href="./" class=" `+ p1 +`text-yellow-800"><li>Home</li></a>
-        <a href="./prodacts.html" class=" `+ p2 +`text-yellow-800"><li>Prodacts</li></a>
-        <a href="./Contact.html" class=" `+ p3 +`text-yellow-800"><li>Contact</li></a>
-        <a href="./About.html" class=" `+ p4 +`text-yellow-800"><li>About</li></a>
+        <li class="flex flex-col">
+        <div onclick="navtoggle2()"  class="flex items-center `+ p2 +`text-yellow-800 gap-3 cursor-pointer">
+            <a class=" ">Prodacts</a>
+            <button class=" hover:text-yellow-900 ">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down" viewBox="0 0 16 16">
+              <path d="M3.204 5h9.592L8 10.481zm-.753.659 4.796 5.48a1 1 0 0 0 1.506 0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 0 0-.753 1.659"/>
+            </svg></button>
+        </div>
+            <ul id="prodact-dropdown2" class="prodact-dropdown hidden absolute z-20 "></ul>
+        </li>
+        <a href="./contact.html" class=" `+ p3 +`text-yellow-800"><li>Contact</li></a>
+        <a href="./about.html" class=" `+ p4 +`text-yellow-800"><li>About</li></a>
       </ul>
-      <div onclick="navtoggle()" class="md:hidden">
+      <div onclick="navtoggle()" class="md:hidden cursor-pointer">
         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
           <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
         </svg>
       </div>
     </div>
-    <div id="towNav" class="md:hidden hidden absolute bg-white h-full w-full z-50">
+    <div id="towNav" class="md:hidden hidden absolute bg-white h-fit w-full z-50">
       <ul class="flex flex-col ">
           <a href="./" class=" `+ p1 +`text-yellow-800 border-t p-8"><li >Home</li></a>
-          <a href="./prodacts.html" class=" `+ p2 +`text-yellow-800 border-t p-8"><li ">Prodacts</li></a>
-          <a href="./Contact.html" class=" `+ p3 +`text-yellow-800 border-t p-8"><li>Contact</li></a>
-          <a href="./About.html" class=" `+ p4 +`text-yellow-800 border-y p-8"><li>About</li></a>
+          <li class=" border-t">
+          <div onclick="navtoggle1()" class="cursor-pointer  p-8 flex justify-between">
+            <a class=" `+ p2 +`text-yellow-800">Prodacts</a>
+            <div class=" `+ p2 +`text-yellow-800">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-caret-down" viewBox="0 0 16 16">
+              <path d="M3.204 5h9.592L8 10.481zm-.753.659 4.796 5.48a1 1 0 0 0 1.506 0l4.796-5.48c.566-.647.106-1.659-.753-1.659H3.204a1 1 0 0 0-.753 1.659"/>
+            </svg>
+            </div>
+          </div>
+          <div id="prodact-dropdown1" class="hidden">
+            <ul class="prodact-dropdown flex flex-col px-8 pl-9 pb-8"></ul>
+          </div>
+            </li>
+          <a href="./contact.html" class=" `+ p3 +`text-yellow-800 border-t p-8"><li>Contact</li></a>
+          <a href="./about.html" class=" `+ p4 +`text-yellow-800 border-y p-8"><li>About</li></a>
       </ul>
     </div>
   </nav>`;
@@ -56,10 +77,40 @@ function navbarc(p1,p2,p3,p4){
         </div>
     </footer>
   </div>`;
+  fetch("./accest/json/products.json")
+  .then(res => res.json())
+  .then(data => {
+    const types = [...new Set(data.map(p => p.type))]; // استخراج الأنواع الفريدة
+    const dropdown = document.createElement("ul");
+    const li = document.createElement("li");
+      li.innerHTML = `<a href="./prodacts.html">all prodact</a>`;
+      dropdown.appendChild(li);
+    types.forEach(type => {
+      const li = document.createElement("li");
+      li.innerHTML = `<a href="./catalogs.html?type=${type}">${type}</a>`;
+      dropdown.appendChild(li);
+    });
+
+    // إدراج القائمة في كل من القائمة العلوية والقائمة الجانبية
+    const prodactMenus = document.querySelectorAll(".prodact-dropdown");
+    prodactMenus.forEach(menu => {
+      menu.appendChild(dropdown.cloneNode(true));
+    });
+  });
 }
 
 
 function navtoggle(){
     document.getElementById("towNav").classList.toggle("hidden");
-    document.getElementById("body").classList.toggle("overflow-hidden");
+    document.getElementById("prodact-dropdown1").classList = "hidden";
 };
+
+function navtoggle1(){
+    document.getElementById("prodact-dropdown1").classList.toggle("hidden");
+};
+function navtoggle2(){
+    document.getElementById("prodact-dropdown2").classList.toggle("hidden");
+};
+
+
+// توليد عناصر قائمة الأنواع داخل "Prodacts"
