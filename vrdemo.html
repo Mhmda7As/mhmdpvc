@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="output.css">
+  <link rel="stylesheet" href="./accest/css/globel.css">
+  <title>vr-demo</title>
+</head>
+<body class="font-manrope h-screen overflow-y-scroll md:snap-y md:snap-mandatory scroll-smooth" onload="navbarc('hover:','hover:','hover:','hover:');">
+    <section id="navbarcid"></section>
+        <nav class="w-full border-y mb-4">
+          <div class="container mx-auto py-8 px-8 md:p-8 flex justify-between items-center">
+            <div class="flex justify-start gap-3">
+              <div><a class="hover:text-yellow-700" href="./vr.html">vr /</a></div>
+               <div><a class="text-yellow-700" id="breadcrumb-img" href="./vrdemo.html?id=h(1)"></a></div>
+            </div>
+            <a class="hover:text-yellow-700 hover:border-yellow-700 hover:bg-gray-200 border p-3 rounded" href="./vr.html">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0"/>
+              </svg>
+            </a>
+          </div>
+        </nav>
+      
+        <div class="container mx-auto px-4 snap-center">
+          <div class="flex lg:flex-row flex-col justify-between md:gap-2 gap-4">
+            <!-- العمود الأيسر: الصورة الرئيسية -->
+             <div class="lg:w-2/3 md:p-4 rounded-md ">
+                <img id="main-img" class="lg:max-h-[600px] md:max-h-[470px] max-h-[450px] object-fit  mx-auto rounded-md border-gray-100 shadow shadow-gray-600" src="">
+            </div>
+            <!-- العمود الأيمن: الصور الجانبية -->
+            <div class="lg:w-1/3 rounded md:p-4">
+                <div id="probtnlist" class="flex flex-col gap-3 h- border p-4 rounded lg:h-[600px] md:h-[470px] h-[450px] overflow-y-auto ">
+                
+              </div>
+            </div>
+          </div>
+        </div>
+        <button id="backToTopBtn" class="fixed md:bottom-6 md:right-6  bg-yellow-700 text-white text-center h-11 w-11 rounded-md shadow-lg hover:bg-yellow-900 transition duration-300 z-50">
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-up mx-auto" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5"/>
+</svg>
+</button>
+    <section class="mt-16" id="footercid"></section>
+    <script src="./accest/js/vrdemo.js"></script>
+    <script src="./accest/js/navandfoot.js"></script>
+    <script src="./accest/js/top-btn.js"></script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="output.css">
+  <link rel="stylesheet" href="./accest/css/globel.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <title>Document</title>
+</head>
+<style>
+  @media (max-width: 639px) {
+    .swiper-wrapper img{
+    object-fit: cover;
+    width: auto;   
+    height: 400px; 
+  }
+}  @media (min-width: 639px) {
+  .swiper-wrapper img{
+    object-fit: contain;
+    width: auto;   
+    height: 400px; 
+  }
+}
+</style>
+<body id="body" class="font-manrope" onload="navbarc('hover:','font-bold ','hover:','hover:');">
+<section id="navbarcid"></section>
+<section id="product-details"></section>
+<section>
+<div class="bg-white my-16">
+        <div class="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
+          <h2 class="sr-only">Products</h2>        
+          <div id="prodacts-list-4" class="md:px-0 px-4 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
+          </div>
+    </div>
+</section>
+<button id="backToTopBtn"
+  class="fixed md:bottom-6 md:right-6  bg-yellow-700 text-white text-center h-11 w-11 rounded-md shadow-lg hover:bg-yellow-500 transition duration-300 z-30">
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-up mx-auto" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5"/>
+</svg>
+</button>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      pagination: {
+        el: ".swiper-pagination",
+        type: "fraction",
+      },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+     // السلايدر المصغر
+  const gallerySwiper = new Swiper('.gallery-swiper', {
+    slidesPerView: 'auto',
+    spaceBetween: 10,
+  });
+
+  // السلايدر بالحجم الكامل
+  const fullscreenSwiper = new Swiper('.fullscreen-swiper', {
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  });
+
+  const overlay = document.getElementById('fullscreenOverlay');
+  const thumbs = document.querySelectorAll('.thumb');
+
+  // عند الضغط على صورة مصغرة
+  thumbs.forEach((thumb, index) => {
+    thumb.addEventListener('click', () => {
+      overlay.style.display = 'flex';
+      fullscreenSwiper.slideTo(index);
+    });
+  });
+
+  function closeFullscreen() {
+    overlay.style.display = 'none';
+  }
+
+  // إغلاق بزر Escape
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeFullscreen();
+  });
+
+
+    function scrollToSection(id) {
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
+  </script>
+<section id="footercid"></section>
+<script src=".//accest/js/p4.js"></script>
+<script src="./accest/js/product-single.js"></script>
+<script src="./accest/js/navandfoot.js"></script>
+</body>
+</html>
